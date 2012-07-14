@@ -1,0 +1,6 @@
+if [[ -s "/home/cnk/.rvm/environments/ruby-1.9.3-p194@RailsBridge" ]] ; then
+  . "/home/cnk/.rvm/environments/ruby-1.9.3-p194@RailsBridge"
+else
+  rvm --create use  "ruby-1.9.3-p194@RailsBridge"
+fi
+
