@@ -21,7 +21,7 @@ class TopicsControllerTest < ActionController::TestCase
       post :create, topic: { description: @topic.description, title: @topic.title }
     end
 
-    assert_redirected_to topic_path(assigns(:topic))
+    assert_redirected_to topics_path
   end
 
   test "should show topic" do
