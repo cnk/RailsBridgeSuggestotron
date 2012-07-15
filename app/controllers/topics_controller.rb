@@ -2,7 +2,7 @@ class TopicsController < ApplicationController
   # GET /topics
   # GET /topics.json
   def index
-    @topics = Topic.all
+    @topics = Topic.select("topics.*, COUNT(votes.id) AS count_votes").joins("LEFT OUTER JOIN votes ON topics.id = votes.topic_id").group("topics.id").order("count_votes DESC")
 
     respond_to do |format|
       format.html # index.html.erb
